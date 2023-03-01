@@ -1,6 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const { port } = require("./config/serverConfig");
+const { PORT } = require("./config/serverConfig");
 
 const setUpAndStartServer = async () => {
   const app = express();
@@ -11,8 +11,8 @@ const setUpAndStartServer = async () => {
   app.get("/", (req, res) => {
     res.send("hello");
   });
-  app.listen(port, () => {
-    console.log(`Listening to port ${port}`);
+  app.listen(PORT, () => {
+    console.log(`Listening to port ${PORT}`);
   });
 };
 
