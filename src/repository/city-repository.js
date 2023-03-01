@@ -37,6 +37,16 @@ class CityRepository {
     }
   }
 
+  async getAllCities() {
+    try {
+      const cities = await City.findAll();
+      return cities;
+    } catch (error) {
+      console.log("Something went wrong in the repository layer");
+      throw { error };
+    }
+  }
+
   async updateCity(cityId, data) {
     try {
       // The below approach also works but will not return updated object, if we are using Postgres then returning : true can be used else not
